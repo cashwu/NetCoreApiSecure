@@ -25,7 +25,8 @@ namespace testNetCoreHttpSecure.Controllers
         }
 
         [HttpGet]
-        [RequestLimit("WeatherGet", 2, 30)]
+        // [RequestLimit("WeatherGet", 2, 30)]
+        [RequestValidateReferrer]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
