@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using testNetCoreHttpSecure.Middlewares;
 
 namespace testNetCoreHttpSecure
 {
@@ -35,6 +36,8 @@ namespace testNetCoreHttpSecure
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<DosAttackMiddleware>();
 
             app.UseRouting();
 
